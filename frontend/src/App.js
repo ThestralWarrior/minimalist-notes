@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-
 import NoteInput from './components/NoteInput';
 import NoteList from './components/NoteList';
-
+import './App.css';
 function App() {
   const [notes, setNotes] = useState([]);
   const [currentNote, setCurrentNote] = useState('');
@@ -14,11 +13,12 @@ function App() {
 
   return (
     <div className="app">
+      <h1>Minimalist Notes App</h1>
       <NoteInput 
         currentNote={currentNote} 
         setCurrentNote={setCurrentNote} 
-      /><br/>
-      <button onClick={handleSaveNote}>Save</button>
+        onSave={handleSaveNote} // Passing handleSaveNote as a prop
+      />
       <NoteList notes={notes} />
     </div>
   );

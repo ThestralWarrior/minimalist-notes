@@ -1,12 +1,13 @@
 import React from 'react';
+import NoteCard from './NoteCard';
 
 function NoteList({ notes }) {
   return (
-    <ul>
+    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {notes.map((note, index) => (
-        <li key={index}>{note}</li>
+        <NoteCard key={index} note={note} />
       ))}
-    </ul>
+    </div>
   );
 }
 
